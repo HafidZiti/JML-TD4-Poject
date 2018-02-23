@@ -61,34 +61,34 @@ public class TestExplosivesJUnit4 {
 
 	@Test
 	public void testProp_1() {
-		try{
-		Explosives e = new Explosives();
-		for (int i = 0; i < 25; i++) {
-			e.add_incomp("Prod" + i, "Prod" + i + "'");
+		try {
+			e = new Explosives();
+			for (int i = 0; i < 25; i++) {
+				e.add_incomp("Prod" + i, "Prod" + i + "'");
+			}
+		} catch (JmlAssertionError e) {
+			handleJMLAssertionError(e);
 		}
-		} 	catch(JmlAssertionError e){
-			handleJMLAssertionError(e);		
-	}  
 	}
 
 	@Test
 	public void testProp_2() {
-		try{
-		Explosives e = new Explosives();
-		for (int i = 0; i < 30; i++) {
-			e.add_assign("Bat", "Prod" + i);
+		try {
+			e = new Explosives();
+			for (int i = 0; i < 30; i++) {
+				e.add_assign("Bat", "Prod" + i);
+			}
+		} catch (JmlAssertionError e) {
+			handleJMLAssertionError(e);
 		}
-		} 	catch(JmlAssertionError e){
-			handleJMLAssertionError(e);		
-	}  
 	}
 
 	@Test
 	public void testProp_3() {
 		try {
-			Explosives e = new Explosives();
-			for (int i = 0; i < 25; i++) {
-				e.add_incomp("Prod" + i, "Prod" + i + "'");
+			e = new Explosives();
+			for (int i = 0; i < 24; i++) {
+				e.add_incomp("P" + i, "P" + i);
 
 			}
 		} catch (JmlAssertionError e) {
@@ -100,13 +100,39 @@ public class TestExplosivesJUnit4 {
 	public void testProp_4() {
 		try {
 
-			Explosives e = new Explosives();
+			e = new Explosives();
 			for (int i = 0; i < 30; i++) {
-				e.add_assign("a" + i, "c" + i);
+				
+				e.add_assign("B" + i, "P" + i);
+
 			}
 		} catch (JmlAssertionError e) {
 			handleJMLAssertionError(e);
 		}
 	}
+	
+	@Test
+	public void testProp_5() {
+		try {
+			e = new Explosives();
+			e.add_incomp("Prod" , "Prod" );
+		} catch (JmlAssertionError e) {
+			handleJMLAssertionError(e);
+		}
+	}	
+	
+	@Test
+	public void testProp_7() {
+		try {
+			e = new Explosives();
+			e.add_incomp("ProdA" , "ProdB" );
+			e.add_assign("Bat1", "ProdA");
+			e.add_assign("Bat1", "ProdB");
+		} catch (JmlAssertionError e) {
+			handleJMLAssertionError(e);
+		}
+	}
+	
+	
 
 }
