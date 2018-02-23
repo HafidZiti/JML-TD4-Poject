@@ -102,7 +102,7 @@ public class TestExplosivesJUnit4 {
 
 			Explosives e = new Explosives();
 			for (int i = 0; i < 30; i++) {
-				e.add_assign("Bat" + i, "Prod" + i);
+				e.add_assign("a" + i, "c" + i);
 			}
 		} catch (JmlAssertionError e) {
 			handleJMLAssertionError(e);
