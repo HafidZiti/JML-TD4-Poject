@@ -96,7 +96,7 @@ public class Explosives {
 		return true;
 	}
 
-	
+
   /*@ requires (prod.startsWith("Prod")) ;
 	@ ensures (\result.startsWith("Bat")) ;
     @ ensures (\forall int i; 0 <= i &&  i < nb_assign;(assign[i][0].equals(\result)) ==> (compatible(assign[i][1],prod)));
@@ -128,25 +128,22 @@ public class Explosives {
 				}
 		}
 
+		// voir ce qu'il a donné 
 		for (int j2 = 0; j2 < all_bats; j2++) {
-			System.out.println("bat " + tous_les_Batiments[j2]);
+			System.out.println("All Bat " + tous_les_Batiments[j2]);
 		}
-
 		for (int j2 = 0; j2 < all_bats_incompa; j2++) {
 			System.out.println("Bat incompatible " + tous_les_Batiments_incompa[j2]);
 		}
-
-		for (int i = 0; i < all_bats; i++) {
+		
+		for (int i=0; i < all_bats; i++){
 			boolean compatibilite = true;
-			for (int j = 0; j < all_bats_incompa; j++) {
+			for (int j=0; j < all_bats_incompa; j++)
 				if (tous_les_Batiments_incompa[j].equals(tous_les_Batiments[i]))
 					compatibilite = false;
-			}
 			if (compatibilite)
 				return tous_les_Batiments[i];
 		}
-		
-		
 		return "Bat_" + ++all_bats;
 	}
 
