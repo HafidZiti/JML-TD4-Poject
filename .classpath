@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="C:/Users/Mazzabi/Desktop/jar/openjml.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Mazzabi/Desktop/jar/jmlspecs.jar"/>
 	<classpathentry kind="var" path="OPENJML_RUNTIME_LIBRARY"/>
+	<classpathentry kind="lib" path="C:/Users/Mazzabi/Desktop/util/jar/jmlruntime.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
