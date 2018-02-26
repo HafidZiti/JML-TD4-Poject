@@ -6,6 +6,8 @@ import java.util.Arrays;
 
 public class Explosives {
 	public int nb_inc = 0;
+	/*@ public constraint \old(nb_inc) <= nb_inc;
+	@*/ 
 	public String[][] incomp = new String[50][2];
 	public int nb_assign = 0;
 	public String[][] assign = new String[30][2];
