@@ -76,7 +76,7 @@ public class TestExplosivesJUnit4 {
 		try {
 			e = new Explosives();
 			for (int i = 0; i < 30; i++) {
-				e.add_assign("Bat", "Prod" + i);
+				e.add_assign("Bat"+i, "Prod" + i);
 			}
 		} catch (JmlAssertionError e) {
 			handleJMLAssertionError(e);
@@ -126,6 +126,38 @@ public class TestExplosivesJUnit4 {
 			e.add_incomp("ProdA" , "ProdB" );
 			e.add_assign("Bat1", "ProdA");
 			e.add_assign("Bat1", "ProdB");
+		} catch (JmlAssertionError e) {
+			handleJMLAssertionError(e);
+		}
+	}
+	
+	@Test
+	public void testProp_8() {
+		try {
+			e = new Explosives();
+			e.add_incomp("ProdA" , "ProdB" );
+			e.add_assign("Bat1", "ProdA");
+			e.add_assign("Bat2", "ProdB");
+			e.add_assign("Bat3", "ProdA");
+			//invalider la prop 8
+			e.add_assign("Bat1", "ProdA");
+		} catch (JmlAssertionError e) {
+			handleJMLAssertionError(e);
+		}
+	}
+	@Test
+	public void testProp_9() {
+		try {
+			e = new Explosives();
+			e.add_assign("Bat1", "ProdA");
+			e.add_assign("Bat3", "ProdB");
+			e.add_assign("Bat2", "ProdA");
+			e.add_assign("Bat3", "ProdA");
+			e.add_assign("Bat4", "ProdC");
+			//invalider la prop 9
+			e.add_assign("Bat4", "ProdA");
+			e.add_assign("Bat4", "ProdB");
+			e.add_assign("Bat5", "ProdA");
 		} catch (JmlAssertionError e) {
 			handleJMLAssertionError(e);
 		}
