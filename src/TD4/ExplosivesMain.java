@@ -22,7 +22,7 @@ public class ExplosivesMain{
 	System.out.println("It should have exploded at this point");
 	System.out.println("-------------------------");
 	System.out.println("Incompatibilities");
-	for(int i=0; i< e.nb_inc; i++){System.out.println(e.incomp[i][0] + "  " +e.incomp[i][1] );}
+	for(int i=0; i< e.nb_inc; i++){System.out.println(e.incomp[i][0] + "  " +e.incomp[i][1]);}
 	System.out.println("-------------------------");
 	System.out.println("Assignments");
 	for(int i=0; i< e.nb_assign; i++){System.out.println(e.assign[i][0] + "  " +e.assign[i][1] );}
